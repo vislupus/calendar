@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}" />
+    <title>Calendar</title>
+</head>
+
+<body>
+    <div id="add-form">
+        <div id="records"></div>
+
+        <textarea id="add-text" maxlength="50"></textarea>
+        <div id="form-input">
+            <input id="add-vacation" type="checkbox" onclick="vacation()"><label style="flex-grow: 1">Vacation</label>
+            <input id="add-color" type="color" value="#ff00ff">
+        </div>
+
+        <button id="add-button" onclick="addButton()">Add</button>
+        <button id="edit-button" onclick="editButton()">Edit</button>
+        <svg id="add-exit-button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" onclick="exitForm()">
+            <circle cx="12" cy="12" r="11" fill="grey" />
+            <path stroke="white" stroke-width="4" fill="none" d="M6.25,6.25,17.75,17.75" />
+            <path stroke="white" stroke-width="4" fill="none" d="M6.25,17.75,17.75,6.25" />
+        </svg>
+    </div>
+
+    <div id="grid-container">
+        <div class="grid-item">
+            <svg id="left-arrow" onclick="changeYear(-1)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.833,256-256S397.167,0,256,0z M309.333,170.667	c0,2.833-1.125,5.542-3.125,7.542L228.417,256l77.792,77.792c2,2,3.125,4.708,3.125,7.542v32c0,4.313-2.604,8.208-6.583,9.854 c-3.979,1.604-8.583,0.729-11.625-2.313L173.792,263.542c-4.167-4.167-4.167-10.917,0-15.083l117.333-117.333	c2.042-2.042,4.771-3.125,7.542-3.125c1.375,0,2.771,0.271,4.083,0.813c3.979,1.646,6.583,5.542,6.583,9.854V170.667z" />
+            </svg>
+        </div>
+        <div id="year" class="grid-item"></div>
+        <div class="grid-item">
+            <svg id="right-arrow" onclick="changeYear(1)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" transform='rotate(180)'>
+                <path d="M256,0C114.833,0,0,114.833,0,256s114.833,256,256,256s256-114.833,256-256S397.167,0,256,0z M309.333,170.667	c0,2.833-1.125,5.542-3.125,7.542L228.417,256l77.792,77.792c2,2,3.125,4.708,3.125,7.542v32c0,4.313-2.604,8.208-6.583,9.854 c-3.979,1.604-8.583,0.729-11.625-2.313L173.792,263.542c-4.167-4.167-4.167-10.917,0-15.083l117.333-117.333	c2.042-2.042,4.771-3.125,7.542-3.125c1.375,0,2.771,0.271,4.083,0.813c3.979,1.646,6.583,5.542,6.583,9.854V170.667z" />
+            </svg>
+        </div>
+
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='ajax.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='calendar.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+
+</html>
