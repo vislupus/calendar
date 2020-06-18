@@ -6,7 +6,7 @@
 
 ## Overview
 
-A simple single-screen application built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and [Vanilla JavaScript](http://vanilla-js.com/) for marking events on a calendar on which are marked Bulgarian holidays.
+A simple single-screen application built with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and [Vanilla JavaScript](http://vanilla-js.com/) for marking events and vacations on a calendar.
 
 ## Features
 
